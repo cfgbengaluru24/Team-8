@@ -1,17 +1,16 @@
 import './App.css';
-import VerticalNavbar from './components/admin/navbar/navbar';
-import TrainerRegistration from './components/admin/trainerRegistration/trainerR';
-import TrainerA from './components/admin/trainerAcceptance/trainerA';
-import SHGDetails from './components/admin/shgDetails/shgDetails';
-import LoginForm from './components/login/login';
+import Dashboard from './components/admin/Dashboard/Dashboard';
+import Header from './components/admin/Header/Header';
+import SHGs from './components/admin/SHGs/SGHs';
+import Footer from './components/admin/Footer/Footer';
+
 function App() {
   return (
     <div className="App">
-       {/* <VerticalNavbar />
-      <TrainerRegistration />
-      <TrainerA />
-      <SHGDetails />
-      <LoginForm /> */}
+      {/* <Header />
+      <Dashboard/>
+      <SHGs/>
+      <Footer/> */}
     </div>
   );
 }
