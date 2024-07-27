@@ -40,5 +40,30 @@ const loginUser = catchAsyncError(async (req, res, next) => {
     sendToken(newUser, 200, res)
 })
 
+const logoutUser = catchAsyncError(async (req, res, next) => {
+
+    res.cookie("token", null, {
+        expires: new Date(Date.now()),
+        httpOnly: true
+    })
+    res.status(200).json({
+        success: true,
+        message: "logout successfully"
+    })
+})
+
+const getUserDetails = catchAsyncError(async (req, res, next) => {
+    var user = await User.findById(req.user.id).select("+password")
+    if(!user){
+        user = await Trainer.findById(req.user.id).select("+password")
+    }
+
+
+    res.status(200).json({
+        success: true,
+        user
+    })
+})
+
 export default registerUser
-export {loginUser}
+export {loginUser,logoutUser,getUserDetails}

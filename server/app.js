@@ -34,9 +34,11 @@ app.use(cors({
 
 import adminRoutes from "./routes/adminRoutes.js"
 import userRoutes from "./routes/userRoutes.js"
+import trainerRoutes from "./routes/trainerRoutes.js"
 
 app.use("/api/v1",adminRoutes)
 app.use("/api/v1",userRoutes)
+app.use("/api/v1/trainer",trainerRoutes)
 
 app.get("/",(req,res)=>{
     res.send("welcome to home page")

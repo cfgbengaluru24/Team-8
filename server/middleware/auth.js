@@ -2,6 +2,7 @@ import User from "../models/UserModel.js";
 import ErrorHandler from "../utils/errorHandler.js";
 import catchAsyncError from "./catchAsyncError.js";
 import jwt from "jsonwebtoken";
+import Trainer from "../models/trainerModel.js";
 
 
 const isAuthenticated = catchAsyncError(async(req,res,next)=>{
@@ -14,6 +15,10 @@ const isAuthenticated = catchAsyncError(async(req,res,next)=>{
     const decodedData = jwt.verify(token,process.env.JWT_SECRET)
 
     req.user = await User.findById(decodedData.id)
+
+    if(!req.user){
+        req.user = await Trainer.findById(decodedData.id)
+    }
 
     next()
 })
