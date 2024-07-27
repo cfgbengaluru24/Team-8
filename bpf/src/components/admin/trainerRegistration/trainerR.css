@@ -1,0 +1,31 @@
+/* Custom styles to complement Bootstrap */
+.card {
+    background-color: #f9f9f9;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .text-primary {
+    color: #922A28 !important;
+  }
+  
+  .btn-primary {
+    background-color: #922A28;
+    border: none;
+    width: fit-content !important;
+  }
+  
+  .btn-primary:hover {
+    background-color: #E2CEC5;
+    color: #922A28;
+  }
+  
+  .form-control {
+    width: 100% !important;
+  }
+  
+  label {
+    text-align: right; /* Align the labels to the right */
+  }
+  

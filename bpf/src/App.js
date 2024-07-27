@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-
+import VerticalNavbar from './components/admin/navbar/navbar';
+import TrainerRegistration from './components/admin/trainerRegistration/trainerR';
+import TrainerA from './components/admin/trainerAcceptance/trainerA';
+import SHGDetails from './components/admin/shgDetails/shgDetails';
+import LoginForm from './components/login/login';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       {/* <VerticalNavbar />
+      <TrainerRegistration />
+      <TrainerA />
+      <SHGDetails />
+      <LoginForm /> */}
     </div>
   );
 }
