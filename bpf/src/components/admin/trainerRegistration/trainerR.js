@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './trainerR.css';
 
-const TrainerRegistration = () => {
+const TrainerR = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -82,4 +82,4 @@ const TrainerRegistration = () => {
   );
 };
 
-export default TrainerRegistration;
+export  default TrainerR;

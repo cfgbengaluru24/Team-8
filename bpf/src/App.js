@@ -1,18 +1,34 @@
-import './App.css';
-import Dashboard from './components/admin/Dashboard/Dashboard';
-import Header from './components/admin/Header/Header';
-import SHGs from './components/admin/SHGs/SGHs';
-import Footer from './components/admin/Footer/Footer';
+import React, { useEffect, useState, useRef } from 'react'
+import webFont from "webfontloader"
+import { BrowserRouter, Routes, Route, useSearchParams } from 'react-router-dom'
+import LoginForm from './components/login/login'
+import Dashboard from './components/admin/Dashboard/Dashboard'
+import TrainerDashboard from './components/trainer/dashboard/TrainerDashboard'
+import store from "./store/store.js"
+import { loadUser } from './action/trainerAction'
+import TrainerR from './components/admin/trainerRegistration/TrainerR.js'
 
-function App() {
+
+const App = () => {useEffect(() => {
+  store.dispatch(loadUser());
+}, [])
+
+
   return (
-    <div className="App">
-      {/* <Header />
-      <Dashboard/>
-      <SHGs/>
-      <Footer/> */}
-    </div>
-  );
+    <>
+      <div className="body">
+        <BrowserRouter>
+          <Routes>
+          <Route path="/" element={<LoginForm />}></Route>
+          <Route path="/admin" element={<Dashboard />}></Route>
+          <Route exact path="/trainer" element={<TrainerDashboard />}></Route>
+          {/* <Route exact path="/trainer/profile" element={<TrainerDetailsForm />}></Route> */}
+          <Route exact path="/trainer/registration" element={<TrainerR/>}></Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App

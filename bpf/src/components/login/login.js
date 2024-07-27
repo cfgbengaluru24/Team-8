@@ -1,27 +1,42 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './login.css'; // Ensure this file has your custom styles
-
+import { useDispatch, useSelector } from 'react-redux';
+import { clearErrors, login, register } from '../../action/userActions.jsx';
+import { useAlert } from "react-alert";
+import {useNavigate} from "react-router-dom"
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+
+  const dispatch = useDispatch()
+    const alert = useAlert();
+    const navigate = useNavigate();
+
+    const { error, loading, isAuthenticated, user } = useSelector(
+      (state) => state.user
+  )
 
   const handleLogin = (e) => {
     e.preventDefault();
+    dispatch(login(email, password))
+  };
 
-    // Basic validation
-    if (!email || !password) {
-      setError('Please fill in all fields');
-      return;
+  useEffect(() => {
+    if (error) {
+        alert.error(error);
+        dispatch(clearErrors())
     }
 
-    setError('');
-    // Handle login logic here (e.g., call an API)
-
-    console.log('Email:', email);
-    console.log('Password:', password);
-  };
+    if (isAuthenticated) {
+        if(user.role==="admin"){
+          navigate("/admin")
+        }
+        if(user.role==="trainer"){
+          navigate("/trainer")
+        }
+    }
+}, [dispatch, error, alert, navigate, isAuthenticated])
 
   return (
     <div className="container mt-5">

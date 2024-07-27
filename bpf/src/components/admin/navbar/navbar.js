@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 
-const VerticalNavbar = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // Initially closed
 
   const toggleNavbar = () => {
@@ -18,7 +19,7 @@ const VerticalNavbar = () => {
       </div>
       <div className={`vertical-navbar ${isOpen ? 'open' : 'closed'}`}>
         <a href="#dashboard" className="nav-link">Dashboard</a>
-        <a href='#trainer-registration' className='nav-link'>Trainer registration</a>
+        <Link to="/trainer/registration" className='nav-link'>Trainer registration</Link>
         <a href="#trainer-details" className="nav-link">Trainer details</a>
         <a href="#shgs" className="nav-link">SHGs</a>
       </div>
@@ -26,4 +27,4 @@ const VerticalNavbar = () => {
   );
 };
 
-export default VerticalNavbar;
+export default Navbar;

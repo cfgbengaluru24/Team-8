@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
+import Header from "../Header/Header.jsx"
+import { useDispatch, useSelector } from 'react-redux';
+import { loadUser } from '../../../action/trainerAction.jsx';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -13,6 +16,8 @@ import {
   Legend,
 } from 'chart.js';
 import './Dashboard.css';
+import { useNavigate } from 'react-router-dom';
+import Navbar from '../navbar/Navbar.js';
 
 // Registering the necessary components
 ChartJS.register(
@@ -31,6 +36,12 @@ const Dashboard = () => {
   const numberOfSHGs = Math.floor(Math.random() * 1000);
   const numberOfTrainers = Math.floor(Math.random() * 100);
   const successRate = (Math.random() * 100).toFixed(2);
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const { error, loading, isAuthenticated } = useSelector(
+    (state) => state.user
+)
 
   const barData = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June'],
@@ -74,7 +85,17 @@ const Dashboard = () => {
     ]
   };
 
+  useEffect(()=>{
+    if(!isAuthenticated){
+      navigate("/")
+    }
+  },[ dispatch, error, alert, navigate, isAuthenticated])
+
+
   return (
+    <>
+    <Header/>
+    <Navbar/>
     <div className="dashboard">
     <div className="blocks">
       <div className="block">
@@ -101,6 +122,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
