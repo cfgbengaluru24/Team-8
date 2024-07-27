@@ -140,10 +140,6 @@ const SHGDetails = () => {
             ))}
           </tbody>
         </table>
-        <MapComponent
-          locations={filteredMembers.map(member => member.location)}
-          locationCoordinates={locationCoordinates}
-        />
       </div>
     </div>
   );

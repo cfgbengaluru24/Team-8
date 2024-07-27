@@ -18,10 +18,11 @@ const Navbar = () => {
         <div className="bar"></div>
       </div>
       <div className={`vertical-navbar ${isOpen ? 'open' : 'closed'}`}>
-        <a href="#dashboard" className="nav-link">Dashboard</a>
+        
+        <Link to="/admin" className='nav-link'>Dashboard</Link>
         <Link to="/trainer/registration" className='nav-link'>Trainer registration</Link>
-        <a href="#trainer-details" className="nav-link">Trainer details</a>
-        <a href="#shgs" className="nav-link">SHGs</a>
+        <Link to="/trainer/details" className='nav-link'>Trainer details</Link>
+        <Link to="/trainer/SHGs" className='nav-link'>SHGs</Link>
       </div>
     </div>
   );
