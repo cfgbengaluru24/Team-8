@@ -27,9 +27,7 @@ const userSchema = new mongoose.Schema({
     role: {
         type: String,
         default: "user"
-    },
-    resetPasswordToken: String,
-    resetPasswordExpire: Date,
+    }
 })
 
 userSchema.pre("save", async function (next) {
@@ -53,20 +51,6 @@ userSchema.methods.getJWTToken = function () {
 
 userSchema.methods.comparePassword = async function (password) {
     return await bcrypt.compare(password, this.password)
-}
-
-// generating password reset token
-userSchema.methods.getResetPasswordToken = function () {
-
-    //generating token
-    const resetToken = crypto.randomBytes(20).toString("hex")
-
-    // Hashing and added to user schema
-    this.resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex")
-
-    this.resetPasswordExpire = Date.now() + 15 * 60 * 1000;
-
-    return resetToken
 }
 
 

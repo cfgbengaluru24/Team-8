@@ -19,7 +19,7 @@ const app=express();
 
 app.use(cookieParser())
 app.use(express.json())
-app.use(bodyParser.urlencoded())
+app.use(express.urlencoded({ extended: true }))
 app.use(fileUpload())
 
 
@@ -33,8 +33,10 @@ app.use(cors({
 //Route Import
 
 import adminRoutes from "./routes/adminRoutes.js"
+import userRoutes from "./routes/userRoutes.js"
 
 app.use("/api/v1",adminRoutes)
+app.use("/api/v1",userRoutes)
 
 app.get("/",(req,res)=>{
     res.send("welcome to home page")

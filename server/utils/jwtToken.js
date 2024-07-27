@@ -1,6 +1,7 @@
 // crating token and shaving in cookie
 
 const sendToken = (user, statusCode, res) => {
+    
     const token = user.getJWTToken();
 
     // options for cookies

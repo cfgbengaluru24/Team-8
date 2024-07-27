@@ -23,6 +23,10 @@ const trainerSchema = new mongoose.Schema({
         required: [true, "Please Enter Your Password"],
         minLength: [8, "Password should have atleast 8 character"],
         select: false
+    },
+    role: {
+        type: String,
+        default: "trainer"
     }
 })
 
@@ -34,6 +38,16 @@ trainerSchema.pre("save", async function (next) {
 
     this.password = await bcrypt.hash(this.password, 10);
 })
+
+trainerSchema.methods.getJWTToken = function () {
+    return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXPIRE,
+    })
+}
+
+trainerSchema.methods.comparePassword = async function (password) {
+    return await bcrypt.compare(password, this.password)
+}
 
 const Trainer = mongoose.model("Trainer", trainerSchema)
 
