@@ -8,7 +8,6 @@ const TrainerDetailsForm = () => {
     email: '',
     phoneNumber: '',
     city: '',
-    postcode: '',
     languages: ['']
   });
 
@@ -46,7 +45,6 @@ const TrainerDetailsForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add form submission logic here, e.g., send the data to an API
     console.log('User Details Submitted:', userDetails);
   };
 
@@ -63,7 +61,6 @@ const TrainerDetailsForm = () => {
             onChange={handleChange}
           />
         </label>
-        <br />
         <label>
           Name:
           <input
@@ -73,7 +70,6 @@ const TrainerDetailsForm = () => {
             onChange={handleChange}
           />
         </label>
-        <br />
         <label>
           Email:
           <input
@@ -83,7 +79,6 @@ const TrainerDetailsForm = () => {
             onChange={handleChange}
           />
         </label>
-        <br />
         <label>
           Phone Number:
           <input
@@ -93,7 +88,6 @@ const TrainerDetailsForm = () => {
             onChange={handleChange}
           />
         </label>
-        <br />
         <label>
           City:
           <input
@@ -103,25 +97,25 @@ const TrainerDetailsForm = () => {
             onChange={handleChange}
           />
         </label>
-        <br />
-        <label>Languages:</label>
-        {userDetails.languages.map((language, index) => (
-          <div key={index}>
-            <input
-              type="text"
-              name="languages"
-              value={language}
-              onChange={(e) => handleChange(e, index)}
-            />
-            <button type="button" onClick={() => handleRemoveLanguage(index)}>
-              Remove
-            </button>
-          </div>
-        ))}
-        <button type="button" onClick={handleAddLanguage}>
-          Add Language
-        </button>
-        <br />
+        <label>
+          Languages:
+          {userDetails.languages.map((language, index) => (
+            <div key={index} className="language-group">
+              <input
+                type="text"
+                name="languages"
+                value={language}
+                onChange={(e) => handleChange(e, index)}
+              />
+              <button type="button" onClick={() => handleRemoveLanguage(index)}>
+                Remove
+              </button>
+            </div>
+          ))}
+          <button type="button" onClick={handleAddLanguage}>
+            Add Language
+          </button>
+        </label>
         <button type="submit">Submit</button>
       </form>
     </div>
