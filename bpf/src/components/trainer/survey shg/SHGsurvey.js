@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles.css';
+import './SHGSurvey.css';
 
 const SHGSurvey = () => {
   const [numMembers, setNumMembers] = useState('');

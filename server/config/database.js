@@ -1,5 +1,15 @@
 import mongoose from "mongoose";
 
+import dotenv from 'dotenv'
+
+
+if (process.env.NODE_ENV !== "PRODUCTION") {
+    dotenv.config({ path: "config/config.env" })
+}
+else {
+    dotenv.config()
+}
+
 const connectDatabase = ()=>{
     mongoose.connect(process.env.DB_URI,{
         dbName: "BPF"

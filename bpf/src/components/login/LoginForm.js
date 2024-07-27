@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './login.css'; // Ensure this file has your custom styles
+import './LoginForm.css'; // Ensure this file has your custom styles
 import { useDispatch, useSelector } from 'react-redux';
 import { clearErrors, login, register } from '../../action/userActions.jsx';
 import { useAlert } from "react-alert";

@@ -4,6 +4,7 @@ import './trainerR.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { trainerRegister } from '../../../action/trainerAction';
 import { useAlert } from 'react-alert';
+import './TrainerR.css';
 
 const TrainerR = () => {
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import webFont from "webfontloader"
 import { BrowserRouter, Routes, Route, useSearchParams } from 'react-router-dom'
-import LoginForm from './components/login/login'
+import LoginForm from './components/login/LoginForm'
 import Dashboard from './components/admin/Dashboard/Dashboard'
 import TrainerDashboard from './components/trainer/dashboard/TrainerDashboard'
 import store from "./store/store.js"
@@ -21,7 +21,7 @@ const App = () => {useEffect(() => {
       <div className="body">
         <BrowserRouter>
           <Routes>
-          <Route path="/" element={<LoginForm />}></Route>
+          <Route path="/" element={<Home/>}></Route>
           <Route path="/admin" element={<Dashboard />}></Route>
           <Route exact path="/trainer" element={<TrainerDashboard />}></Route>
           {/* <Route exact path="/trainer/profile" element={<TrainerDetailsForm />}></Route> */}
