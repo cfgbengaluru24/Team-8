@@ -34,6 +34,27 @@ const createSHG = async (req, res) => {
   }
 };
 
+const getallshg = async (req, res) => {
+  try {
+      // Fetch all SHG records from the database
+      const shgs = await SHG.find({});
+  
+      // Send the fetched SHG records in the response
+      res.status(200).json({
+      success: true,
+      data: shgs,
+      message: 'Successfully fetched all SHG records'
+      });
+  } catch (error) {
+      // Handle errors and send a 500 status code with an error message
+      res.status(500).json({
+      success: false,
+      message: 'Failed to fetch SHG records',
+      error: error.message
+      });
+    }
+};
+
 
 const addMember =  async (req, res) => {
     const { shgId, newMember } = req.body;
@@ -107,4 +128,4 @@ const multipleUpdate = async (req, res) => {
   };
 
   export default createSHG
-  export {addMember,multipleUpdate}
+  export {addMember,multipleUpdate,getallshg}
