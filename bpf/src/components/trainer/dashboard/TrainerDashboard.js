@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styledashboard.css';
+import './TrainerDashboard.css';
 import profileIcon from '../../../assets/images/profile.png';
 
 const TrainerDashboard = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './surveyForm.css';
+import './SurveyForm.css';
 
 const SurveyForm = () => {
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './trainerR.css';
+import './TrainerR.css';
 
 const TrainerR = () => {
   const [formData, setFormData] = useState({
