@@ -11,7 +11,6 @@ function App() {
       <Dashboard/>
       <SHGs/>
       <Footer/> */}
-      
     </div>
   );
 }

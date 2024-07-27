@@ -1,0 +1,58 @@
+.vertical-navbar {
+  height: 100vh;
+  width: 200px;
+  font-size: larger;
+  color: #E2CEC5;
+  background-color: #922A28;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px; /* Adjusted to leave space for the toggle button */
+  position: fixed;
+  transition: transform 0.3s ease-in-out;
+}
+
+.vertical-navbar.closed {
+  transform: translateX(-200px);
+}
+
+.vertical-navbar.open {
+  transform: translateX(0);
+
+}
+
+.nav-link {
+  color: #E2CEC5; /* Default text color */
+  margin: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: left;
+  padding: 10px;
+  margin-top: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #E2CEC5 !important;
+  color: #922A28 !important;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  z-index: 1000;
+  color: #922A28;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #E2CEC5;
+  margin: 4px 0;
+  transition: background-color 0.3s;
+}
+
+.toggle-button:hover .bar {
+  background-color: #922A28;
+}
