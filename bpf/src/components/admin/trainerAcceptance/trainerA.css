@@ -1,0 +1,32 @@
+/* Custom styles to complement Bootstrap */
+.card {
+    background-color: #f9f9f9;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .text-primary {
+    color: #922A28 !important;
+  }
+  
+  .table th {
+    background-color: #922A28;
+    color: #E2CEC5;
+  }
+  
+  .table td {
+    background-color: #f9f9f9;
+    color: #000;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #E2CEC5;
+    color: #922A28;
+  }
+  
