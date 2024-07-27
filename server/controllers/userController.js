@@ -53,11 +53,7 @@ const logoutUser = catchAsyncError(async (req, res, next) => {
 })
 
 const getUserDetails = catchAsyncError(async (req, res, next) => {
-    var user = await User.findById(req.user.id).select("+password")
-    if(!user){
-        user = await Trainer.findById(req.user.id).select("+password")
-    }
-
+    const user = await Trainer.find({})
 
     res.status(200).json({
         success: true,

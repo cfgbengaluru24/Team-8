@@ -37,14 +37,8 @@ const shgSchema = new Schema({
 
   },
   location: {
-    state: {
       type: String,
-      required: true,
-    },
-    village: {
-      type: String,
-      required: true,
-    }
+      required: true
   },
   memberList: [memberSchema],
   CurrFund: {

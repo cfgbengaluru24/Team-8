@@ -7,7 +7,7 @@ import TrainerDashboard from './components/trainer/dashboard/TrainerDashboard'
 import store from "./store/store.js"
 import { loadUser } from './action/trainerAction'
 import TrainerR from './components/admin/trainerRegistration/TrainerR.js'
-import TrainerA from './components/admin/trainerAcceptance/trainerA.js'
+import TrainerA from './components/admin/trainerAcceptance/TrainerA.js'
 import SHGs from './components/admin/SHGs/SGHs.jsx'
 
 

@@ -2,33 +2,42 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './trainerA.css';
 
+
 const TrainerA = () => {
+
+
   const [searchTerm, setSearchTerm] = useState('');
+  const [trainers, setTrainers] = useState([]);
   const [filteredTrainers, setFilteredTrainers] = useState([]);
-
-  const trainers = [
-    {
-      id: '12345',
-      name: 'John Doe',
-      contact: '123-456-7890',
-      language: 'English',
-      location: 'New York, USA',
-      email: 'johndoe@example.com'
-    },
-    {
-      id: '67890',
-      name: 'Jane Smith',
-      contact: '098-765-4321',
-      language: 'Spanish',
-      location: 'Los Angeles, USA',
-      email: 'janesmith@example.com'
-    }
-    // Add more trainers as needed
-  ];
-
   useEffect(() => {
-    setFilteredTrainers(trainers);
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:8000/api/v1/trainer/all',{
+        method :"get"
+      }).then(
+        data=>data.json()
+    ).then((data)=>{
+      console.log(data)
+      if(data) {
+        setTrainers(data.user);
+        setFilteredTrainers(data.user);
+      }
+    })
+  
+      // const data = await response.json();
+      // if (data.success) {
+      //   setTrainers(data.user);
+      //   setFilteredTrainers(data.user);
+      // }
+    } catch (error) {
+      console.error('Error fetching trainer data:', error);
+    }
+  };
+
+
 
   const handleSearch = () => {
     if (searchTerm === '') {
@@ -36,7 +45,7 @@ const TrainerA = () => {
     } else {
       const filtered = trainers.filter(trainer =>
         Object.values(trainer).some(value =>
-          value.toLowerCase().includes(searchTerm.toLowerCase())
+          String(value).toLowerCase().includes(searchTerm.toLowerCase())
         )
       );
       setFilteredTrainers(filtered);
@@ -64,21 +73,17 @@ const TrainerA = () => {
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>Contact</th>
-              <th>Language</th>
-              <th>Location</th>
               <th>Email</th>
+              <th>Role</th>
             </tr>
           </thead>
           <tbody>
             {filteredTrainers.map(trainer => (
-              <tr key={trainer.id}>
-                <td>{trainer.id}</td>
+              <tr key={trainer._id}>
+                <td>{trainer._id}</td>
                 <td>{trainer.name}</td>
-                <td>{trainer.contact}</td>
-                <td>{trainer.language}</td>
-                <td>{trainer.location}</td>
                 <td>{trainer.email}</td>
+                <td>{trainer.role}</td>
               </tr>
             ))}
           </tbody>

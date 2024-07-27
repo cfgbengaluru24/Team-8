@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './trainerR.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { trainerRegister } from '../../../action/trainerAction';
+import { useAlert } from 'react-alert';
 
 const TrainerR = () => {
+
+  const dispatch = useDispatch()
+  const alert = useAlert()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,8 +25,14 @@ const TrainerR = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission (e.g., send data to server)
-    console.log('Form data submitted:', formData);
+
+    const myForm = new FormData();
+
+    myForm.set("name", formData.name);
+    myForm.set("email", formData.email);
+    myForm.set("password", formData.password);
+    dispatch(trainerRegister(myForm))
+    alert.success("Trainer Registration Successfully")
   };
 
   return (

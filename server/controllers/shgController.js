@@ -2,12 +2,13 @@ import SHG from "../models/shgModel.js";
 // Controller function to create a new SHG
 const createSHG = async (req, res) => {
   try {
-    const { name, memberList, CurrFund, CurrLoan, BusinessMember, baseline, endline } = req.body;
+    const { name, memberList, location, CurrFund, CurrLoan, BusinessMember, baseline, endline } = req.body;
 
     // Create a new SHG document using the data from the request body
     const newSHG = new SHG({
       name,
       memberList,
+      location,
       CurrFund,
       CurrLoan,
       BusinessMember,

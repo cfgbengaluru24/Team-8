@@ -26,7 +26,7 @@ const registerTrainerProfile = catchAsyncError(async (req, res, next) => {
 const getTrainerProfile = catchAsyncError(async (req, res, next) => {
 
 
-    const data = await TrainerProfile.find({user: req.user._id})
+    const data = await TrainerProfile.find({}).toArray()
 
     if (!data) {
         return next(new ErrorHandler("First Complete The Profile", 404));

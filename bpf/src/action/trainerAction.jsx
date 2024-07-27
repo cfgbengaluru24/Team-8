@@ -12,6 +12,25 @@ import { baseUrl } from "../constants/BaseUrl.jsx"
 
 const API_URI = `${baseUrl}/api/v1`;
 
+export const trainerRegister = (userData)=>{
+    return async (dispatch) => {
+        try {
+            dispatch(REGISTER_USER_Details_REQUEST)
+
+            const config = { headers: { "Content-Type": "multipart/form-data" }, withCredentials: true }
+            const { data } = await axios.post(
+                `${API_URI}/trainer/register`,
+                userData,
+                config
+            )
+
+            dispatch(REGISTER_USER_Details_SUCCESS(data))
+        } catch (error) {
+            dispatch(REGISTER_USER_Details_FAIL(error.response.data.message))
+        }
+    }
+}
+
 // load user
 export const loadUser = () => {
     return async (dispatch) => {
