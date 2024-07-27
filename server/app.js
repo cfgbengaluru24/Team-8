@@ -36,11 +36,13 @@ import adminRoutes from "./routes/adminRoutes.js"
 import userRoutes from "./routes/userRoutes.js"
 import trainerRoutes from "./routes/trainerRoutes.js"
 import shgRouters from "./routes/shgRouters.js"
+import surveyRouter from "./routes/serveyRouter.js"
 
 app.use("/api/v1",adminRoutes)
 app.use("/api/v1",userRoutes)
 app.use("/api/v1/trainer",trainerRoutes)
 app.use("/api/v1/trainer",shgRouters)
+app.use("/api/v1/surveyData", surveyRouter);
 
 app.get("/",(req,res)=>{
     res.send("welcome to home page")
