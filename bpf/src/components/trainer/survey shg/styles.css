@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E2CEC5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: #b3aeac;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #8A799F;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #282042;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-top: 10px;
+    color: #922A28;
+  }
+  
+  input, textarea, button {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #8A799F;
+    border-radius: 4px;
+    background-color: #F7F4F3;
+  }
+  
+  button {
+    background-color: #922A28;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #282042;
+  }
+  
+  .member-id-container {
+    margin-top: 10px;
+  }
+  

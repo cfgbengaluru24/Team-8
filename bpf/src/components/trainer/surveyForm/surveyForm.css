@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    margin: 15px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Changed from center to flex-start */
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    background-color: rgba(179, 174, 172, 0.9);
+    padding: 20px; /* Adjusted padding for better spacing */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid #8A799F;
+    margin: 20px 0;
+}
+
+h2 {
+    text-align: center;
+    color: #282042;
+}
+
+form {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Uniform gap between all fields */
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    color: #922A28;
+}
+
+input, select, textarea, button {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #8A799F;
+    border-radius: 4px;
+    background-color: #F7F4F3;
+    width: 100%; /* Ensure inputs take full width of grid column */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+button {
+    background-color: #922A28;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    width: fit-content; /* Adjust the width to fit the content */
+    padding: 10px 20px; /* Add some padding to make it look nice */
+    grid-column: 2 / span 1; /* Place the button in the middle of 3 columns */
+    justify-self: center; /* Center the button within the grid column */
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+button:hover {
+    background-color: #f2766d;
+}
