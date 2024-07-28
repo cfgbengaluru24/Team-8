@@ -38,6 +38,8 @@ Trainers' Adda is an all-in-one solution designed to digitize the process of tra
 ## System Architecture
 
 The architecture leverages the MERN stack (MongoDB, Express, React, Node.js) to ensure a scalable, efficient, and modular solution. The chatbot from Chatbase.ai is integrated to provide automated support for FAQs.
+![flowchart(1)](https://github.com/user-attachments/assets/06bcc495-4b8b-4ab7-8547-fba03916397e)
+
 
 ## Installation
 
@@ -55,6 +57,7 @@ The architecture leverages the MERN stack (MongoDB, Express, React, Node.js) to 
     \`\`\`
 
 3. **Set up environment variables:**<br>
+
 
     Create a \`.env\` file and add your environment variables.
 
