@@ -41,22 +41,24 @@ The architecture leverages the MERN stack (MongoDB, Express, React, Node.js) to 
 
 ## Installation
 
+
+
 1. **Clone the repository:**
 
-    git clone https://github.com/yourusername/trainers-adda.git
+    git clone https://github.com/yourusername/trainers-adda.git<br>
     cd trainers-adda
     \`\`\`
 
-2. **Install dependencies for frontend:**
-    cd bpf
+2. **Install dependencies for frontend:** <br>
+    cd bpf <br>
     npm install
     \`\`\`
 
-3. **Set up environment variables:**
+3. **Set up environment variables:**<br>
 
     Create a \`.env\` file and add your environment variables.
 
-4. **Run the development server:**
-    cd server
+4. **Run the development server:**<br>
+    cd server <br>
     npm start
     \`\`\`
