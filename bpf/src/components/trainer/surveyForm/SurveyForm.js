@@ -1,9 +1,9 @@
 import React from 'react';
-import './SurveyForm.css';
+import './surveyForm.css';
 
 const SurveyForm = () => {
   return (
-    <div className="container">
+    <div className="container cont">
       <h2>Survey Form</h2>
       <form>
         <div className="row">

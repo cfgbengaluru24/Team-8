@@ -16,9 +16,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 600px;
   border: 1px solid #8A799F;
-  margin: 20px 0;
 }
 
 h2 {
@@ -39,6 +37,7 @@ label {
   color: #922A28;
   display: flex;
   flex-direction: column;
+  text-align: left;
   font-size: 14px;
 }
 

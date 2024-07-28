@@ -10,11 +10,10 @@ import cloudinary from "cloudinary"
 
 const registerTrainerProfile = catchAsyncError(async (req, res, next) => {
 
-    const { phone, city, languages, SHG  } = req.body
+    const { phone, city, languages, SHG,name, email   } = req.body
 
     const newTrainerProfile = await TrainerProfile.create({
-        user: req.user._id,
-        phone, city, languages, SHG
+        phone, city, languages, SHG , name , email 
     })
 
     res.status(200).json({

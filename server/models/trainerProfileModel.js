@@ -7,14 +7,17 @@ import { create } from "domain"
 import { type } from "os"
 
 const trainerProfileSchema = new mongoose.Schema({
-    user: {
-        type: mongoose.Schema.ObjectId,
-        ref: "Trainer",
-        require: true
+    name : {
+        type : String , 
+        required : true
+    }, 
+    email : {
+         type : String , 
+         required : true
     },
     phone: {
         type: Number,
-        required: [true, "Please Enter Your Password"],
+        required: [true, "Please Enter Correct Number"],
         minLength: [10, "Password should have atleast 8 character"],
     },
     city: {
@@ -26,10 +29,7 @@ const trainerProfileSchema = new mongoose.Schema({
         type: [String],
         default: []
     },
-    SHG: {
-        type: [String],
-        default: []
-    }
+   
 })
 
 

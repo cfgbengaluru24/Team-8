@@ -1,0 +1,81 @@
+/* Test Container */
+.test-container {
+    padding: 30px;
+    margin-top: 2500px;
+    background-color: #E2CEC5; /* Light background for container */
+    border-radius: 10px; /* Rounded corners for container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Test Category */
+  .test-category {
+    margin-bottom: 20px;
+    color: #922A28; /* Primary color for text */
+    font-size: 1.5rem; /* Larger font size */
+    font-weight: bold;
+  }
+  
+  /* Test Grid */
+  .test-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust column size */
+    gap: 20px;
+  }
+  
+  /* Test Card */
+  .test-card {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff; /* White background for card */
+    border: 1px solid #8A799F; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Test Card Hover Effect */
+  .test-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    border-color: #922A28; /* Change border color on hover */
+  }
+  
+  /* Test Title */
+  .test-title {
+    font-size: 1.4rem; /* Slightly larger title */
+    font-weight: bold;
+    color: #922A28; /* Primary color for title */
+    margin-bottom: 10px; /* Space below title */
+  }
+  
+  /* Test Description */
+  .test-description {
+    margin-top: 10px;
+    color: #282042; /* Darker text color for description */
+    font-size: 1rem; /* Standard font size */
+    line-height: 1.6; /* Better readability */
+  }
+  
+  /* Test Button */
+  .test-button {
+    margin-top: auto;
+    background-color: #922A28; /* Primary color for button */
+    border: 1px solid #922A28; /* Border color */
+    color: #E2CEC5; /* Light color for text */
+    font-weight: bold;
+    padding: 12px 20px; /* Larger padding for button */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transitions */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Inline-block for better spacing */
+  }
+  
+  /* Button Hover State */
+  .test-button:hover {
+    background-color: #E2CEC5; /* Light color */
+    color: #922A28; /* Dark color for text */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  

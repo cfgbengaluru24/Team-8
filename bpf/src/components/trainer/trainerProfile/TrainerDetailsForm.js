@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './TrainerDetailsForm.css';
+import { json } from 'react-router-dom';
 
 const TrainerDetailsForm = () => {
   const [userDetails, setUserDetails] = useState({
-    userId: '',
     name: '',
     email: '',
     phoneNumber: '',
@@ -43,24 +43,42 @@ const TrainerDetailsForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    debugger;
     e.preventDefault();
     console.log('User Details Submitted:', userDetails);
+    try{
+      const res = await fetch("http://localhost:8000/api/v1/trainer/profile", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userDetails),
+        credentials: "include", // Include credentials with the request
+        mode: "cors" // Set CORS mode
+      });
+        const { message} = await res.json();
+      
+      if(!res.ok)
+      {
+         throw new Error(message);
+      }
+      alert(" your profile is registered  ");
+
+    }
+    catch(ex)
+    { 
+        alert(ex);
+    }
+
+   
   };
 
   return (
     <div className="container">
       <h2>User Details Form</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          User ID:
-          <input
-            type="text"
-            name="userId"
-            value={userDetails.userId}
-            onChange={handleChange}
-          />
-        </label>
+       
         <label>
           Name:
           <input

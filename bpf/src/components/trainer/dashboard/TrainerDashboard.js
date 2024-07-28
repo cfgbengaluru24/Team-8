@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './TrainerDashboard.css';
 import profileIcon from '../../../assets/images/profile.png';
+import { Link } from 'react-router-dom';
 
 const TrainerDashboard = () => {
   const openCourses = () => {
@@ -21,10 +22,13 @@ const TrainerDashboard = () => {
           />
           <h3>Trainer Name</h3>
         </div>
-        <a href="index.html">Home</a>
-        <a href="profile-dashboard.html">Profile</a>
+        <Link to="/trainer">Home</Link>
+        <Link to="/trainer/trainerprofile">Profile</Link>
+        <Link to="/trainer/surveyshv">SHG Survey</Link>
+        <Link to="/trainer/surveyform">Member Survey</Link>
+        {/* <a href="profile-dashboard.html">Profile</a>
         <a href="shg-survey.html">SHG Survey</a>
-        <a href="member-survey.html">Member Survey</a>
+        <a href="member-survey.html">Member Survey</a> */}
       </nav>
 
       <div className="dashboard-content">
@@ -37,18 +41,15 @@ const TrainerDashboard = () => {
             <h2>Welcome to the Trainer Dashboard</h2>
           </div>
           <div className="button-container">
-            <button className="btn btn-primary" onClick={openCourses}>Courses</button>
-            <a href="shg-survey.html" className="btn btn-primary">SHG Survey</a>
-            <a href="member-survey.html" className="btn btn-primary">Member Survey</a>
+            <Link to="/trainer/courses" className="btn btn-primary">Courses</Link>
+            <Link to="/trainer/surveyshv" className="btn btn-primary">SHG Survey</Link>
+            <Link to="/trainer/surveyform" className="btn btn-primary">Member Survey</Link>
+            <Link to="https://www.google.com/maps/search/banks+near+me/" target='_blank' className="btn btn-primary">Banks Near Me</Link>
+            <Link to="https://forms.gle/a7M89MYhodNqqHCTA" className="btn btn-primary" target='_blank'>Certification Link</Link>
           </div>
         </div>
 
         {/* Footer */}
-        <footer className="bg-dark text-white text-center p-3">
-          <div className="container">
-            <p className="mb-0">&copy; 2024 Trainer Dashboard. All rights reserved.</p>
-          </div>
-        </footer>
       </div>
     </div>
   );

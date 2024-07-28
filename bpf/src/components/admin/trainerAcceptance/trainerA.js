@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './TrainerA.css';
+import './trainerA.css';
 
 
 const TrainerA = () => {

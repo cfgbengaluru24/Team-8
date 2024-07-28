@@ -3,8 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './trainerR.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { trainerRegister } from '../../../action/trainerAction';
-import { useAlert } from 'react-alert';
-import './TrainerR.css';
+import { useAlert } from 'react-alert'
 
 const TrainerR = () => {
 
