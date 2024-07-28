@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  background-color: rgba(179, 174, 172, 0.9);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border: 1px solid #8A799F;
+}
+
+h2 {
+  text-align: center;
+  color: #282042;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Reduced gap between fields */
+  align-items: stretch;
+}
+
+label {
+  color: #922A28;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 14px;
+}
+
+input, select, textarea {
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #8A799F;
+  border-radius: 4px;
+  background-color: #F7F4F3;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+button {
+  background-color: #922A28;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 14px;
+  width: fit-content; /* Button size fits content */
+  align-self: center; /* Center the button */
+}
+
+button:hover {
+  background-color: #f2766d;
+}
+
+.language-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-group input {
+  flex: 1;
+}
+
+.language-group button {
+  background-color: #922A28;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.language-group button:hover {
+  background-color: #f2766d;
+}

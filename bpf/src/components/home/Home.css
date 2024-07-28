@@ -1,0 +1,111 @@
+/* General Styles */
+.home-wrapper {
+  font-family: Arial, sans-serif;
+  color: #282042;
+}
+
+/* Header */
+.header {
+  padding: 10px 0;
+}
+
+.header-logo {
+  height: 50px;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.header-actions .btn {
+  border-radius: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #8A799F;
+}
+
+.navbar .nav-link {
+  color: #E2CEC5 !important;
+}
+
+.navbar .nav-link:hover {
+  color: #922A28 !important;
+}
+
+/* Carousel */
+.carousel-caption h3,
+.carousel-caption p {
+  color: #ffffff; /* White text for better visibility */
+}
+
+/* Main Content */
+.main-content {
+  padding: 30px 0;
+  background-color: #f9f9f9;
+}
+
+.main-content h2 {
+  color: #922A28;
+}
+
+/* Footer */
+.footer {
+  background-color: #8A799F;
+  color: #E2CEC5;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Button Styles */
+
+/* Default button style */
+.btn-custom {
+  background-color: #922A28; /* Primary color */
+  border: 2px solid #922A28; /* Solid border to match the background */
+  color: #E2CEC5; /* Light color for text */
+  font-weight: bold;
+  padding: 0.5rem 1rem; /* Increased padding for better appearance */
+  border-radius: 0.25rem; /* Slightly rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Button hover state */
+.btn-custom:hover {
+  background-color: #E2CEC5; /* Light color */
+  color: #922A28; /* Dark color for text */
+}
+
+/* Outline button style */
+.btn-outline-custom {
+  border: 2px solid #922A28; /* Solid border */
+  color: #922A28; /* Text color */
+  font-weight: bold;
+  padding: 0.5rem 1rem; /* Increased padding for better appearance */
+  border-radius: 0.25rem; /* Slightly rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Outline button hover state */
+.btn-outline-custom:hover {
+  background-color: #922A28; /* Primary color */
+  color: #E2CEC5; /* Light color for text */
+}
+
+/* Adjust btn-light if needed */
+.btn-light {
+  background-color: #E2CEC5; /* Light background */
+  border: none;
+  color: #922A28; /* Dark color for text */
+  font-weight: bold;
+  padding: 0.5rem 1rem; /* Increased padding for better appearance */
+  border-radius: 0.25rem; /* Slightly rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.btn-light:hover {
+  background-color: #922A28; /* Dark color */
+  color: #E2CEC5; /* Light color for text */
+}
